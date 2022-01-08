@@ -135,7 +135,7 @@ public class PocetnaStrana {
 
                                 dr1.setStanjenaRacunu(dr1.getStanjenaRacunu() - rzp1.getIznos());
                                 System.out.print("Novo stanje na racunu: " + dr1);
-                             
+
                             case "NE":
                                 continue;
 

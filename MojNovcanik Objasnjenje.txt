@@ -1,0 +1,54 @@
+# MojNovcanik
+Projekat MojNovcanik koji simulira mobilni banking
+Zamisao:
+
+Sign Up--> nisam uradila jer treba da istrazim kako da upisem i iscitam podatke iz excel fajla i da ih uporedim sa podacima unesenim za LogIn
+  Korisnik unosi 
+            String ime
+            String prezime
+            String username
+            String password
+  Ti podaci se upisuju u celije u excel fajlu
+
+Log In --> Treba da uradim da nakon 3 neuspesna pokusaja korisniku bude onemoguceno da ponovo pokusa
+           Korisnik preko skenera unosi username i password
+           Username i password se uporedjuju sa podacima koji su sacuvani u excel fajlu tokom Sign Up-a
+           Moraju da se poklapaju i username i password iz jednog Sign Up-a
+           Ako se ne poklapaju, izlazi obavestenje i korisniku se trazi da ponovo unese podatke --> Ovo nisam uradila jer nemam Sign Up za poredjenje
+           Ako su password i username ok, program nastavlja dalje i ispisuje Glavni Meni
+           
+Glavni Meni
+           Ima 5 opcija: --> koje se izlistavaju nakon zavrsetka svako opcije i traze od korisnika da ukuca neku od opcija sve dok ne izabere opciju 5.
+              1. Moji Racuni
+                  Gde se ispisuju svi racuni koje korisnik poseduje --> Treba da napravim i devizni racuni, imam samo dinarski
+                  Vlasnik Racuna
+                  Imate sledece racune
+                  Podaci o racunu:
+                     Broj racuna
+                     Iznos na racunu
+										 
+              2. Placanja --> Treba da dodam vise racuna i da pitam za svaki posebno da li hoce da plati pojedinacno ili sve i onda da vrsi placanja
+									Ispisuje racun koji je za placanje
+									Pita korisnika da li zeli da plati taj racun
+									Ako DA, skida iznos sa racuna i ispisuje novo stanje
+									Ako ne samo iscitava ponovo meni
+									
+							3. Transakcije --> Ovo sve treba da promenim i da vidim da li mi uopste ovo treba ili da organizujem drugacije
+									Izlistava sve transakcije koje su izvrsene
+									
+							4. Menjacnica --> treba da napravim i da menja dinare u deviz, skida sa dinarskog racuna i stavlja na devizni
+									Pita korisnika koliki iznos deviza zeli da promeni
+									Pita korisnika koju valutu menja
+									Racuna iznos u dinarima
+									Pita korisnika da li zeli taj novac da stavi na dinarski racun
+									Ako DA, povecava iznos na dinarskom racunu za tu sumu
+									Ako NE, izlistava
+									meni
+									
+							5. Izadji iz programa
+									Kada ukuca opciju 5, korisnik izlazi iz programa
+									
+NAPOMENE: Treba da se sredi sledece:
+Da se provere klase, da li su sve potrebne i da se reorganizuju, u posebne package po temi, nesto bi trebalo staviti kao abstraktnu (npr. racuni pa iz nje izvesti dinarski i devizni racuni posebno).
+Bacanje greske staviti gde moze i ograniciti korisnika da ne moze da unosi pogresne podatke, npr. negativan iznos, kod stringova (DA i NE) videti kako ga treba uslovljavati
+Ima svasta nesto sto sam zamislila ali ili ne umem ili mi poremeti celu koncepciju i moram da se vracam unazad da menjam sve, a ogranicena sam vremenom.			
