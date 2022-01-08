@@ -2,53 +2,66 @@ package MojNovcanik;
 
 public class Transakcija {
 
-    private Racun racunTransakcije;
-    private Kupovina iznosTransakcije;
-    private Proizvod kategorijaKupovine;
+    private int brojTransakcije;
+    private String datumTransakcije;
+    private RacunZaPlacanje iznosTransakcije;
 
-    public Transakcija(Racun racunTransakcije, Kupovina iznosTransakcije, Proizvod kategorijaKupovine) {
-        this.racunTransakcije = racunTransakcije;
+
+    public Transakcija(int brojTransakcije, String datumTransakcije, RacunZaPlacanje iznosTransakcije) {
+        this.datumTransakcije = datumTransakcije;
+        this.brojTransakcije = brojTransakcije;
         this.iznosTransakcije = iznosTransakcije;
-        this.kategorijaKupovine = kategorijaKupovine;
+
     }
 
-    public Racun getRacunTransakcije() {
-        return racunTransakcije;
+    public int getBrojTransakcije() {
+        return brojTransakcije;
     }
 
-    public Kupovina getIznosTransakcije() {
+    public String getDatumTransakcije() {
+        return datumTransakcije;
+    }
+
+    public int getRacunTransakcije() {
+        return brojTransakcije;
+    }
+
+    public RacunZaPlacanje getIznosTransakcije() {
         return iznosTransakcije;
     }
 
-    public Proizvod getKategorijaKupovine() {
-        return kategorijaKupovine;
+    public void setBrojTransakcije(int brojTransakcije) {
+        this.brojTransakcije = brojTransakcije;
     }
 
-    public void setRacunTransakcije(Racun racunTransakcije) {
-        this.racunTransakcije = racunTransakcije;
+    public void setDatumTransakcije(String datumTransakcije) {
+        this.datumTransakcije = datumTransakcije;
     }
 
-    public void setIznosTransakcije(Kupovina iznosTransakcije) {
+    public void setRacunTransakcije(int racunTransakcije) {
+        this.brojTransakcije = racunTransakcije;
+    }
+
+    public void setIznosTransakcije(RacunZaPlacanje iznosTransakcije) {
         this.iznosTransakcije = iznosTransakcije;
     }
 
-    public void setKategorijaKupovine(Proizvod kategorijaKupovine) {
-        this.kategorijaKupovine = kategorijaKupovine;
-    }
+
 
     public String toString (){
         StringBuilder sb = new StringBuilder();
-        sb.append("Placanje sa racuna br: ");
-        sb.append(racunTransakcije.getBrojRacuna());
+        sb.append("Broj transakcije: ");
+        sb.append(brojTransakcije);
+        sb.append("\n");
+
+        sb.append("Datum transakcije: ");
+        sb.append(datumTransakcije);
         sb.append("\n");
 
         sb.append("Iznos transakcije: ");
-        sb.append(iznosTransakcije.getIznos());
+        sb.append(iznosTransakcije);
         sb.append("\n");
 
-        sb.append("Kategorija: ");
-        sb.append(kategorijaKupovine.getKategorija());
-        sb.append("\n");
 
         return sb.toString();
     }

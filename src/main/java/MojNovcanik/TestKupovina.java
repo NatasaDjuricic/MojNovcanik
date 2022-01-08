@@ -22,7 +22,7 @@ public class TestKupovina {
         System.out.println(p1);
 
         // prvi nacin
-        Kupovina r1 = new Kupovina("");
+        RacunZaPlacanje r1 = new RacunZaPlacanje("");
 
         r1.dodajProizvod(p1);
         System.out.println(r1);
@@ -44,7 +44,7 @@ public class TestKupovina {
         nizKupljenihProzivoda.add(p1);
         nizKupljenihProzivoda.add(p2);
         nizKupljenihProzivoda.add(p3);
-        Kupovina r2 = new Kupovina(nizKupljenihProzivoda, "27.12.2021");
+        RacunZaPlacanje r2 = new RacunZaPlacanje("27.12.2021");
         System.out.println(r2);
         r2.ukloniProizvod(p2);
     }

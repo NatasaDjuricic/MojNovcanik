@@ -4,27 +4,20 @@ package MojNovcanik;
 
 import java.util.ArrayList;
 
-public class Kupovina {
+public class RacunZaPlacanje {
     private ArrayList<Proizvod> nizKupljenihProizvoda;
     private String datum;
     private double iznos;
 
-    public Kupovina(ArrayList<Proizvod> nizKupljenihProizvoda, String datum) {
-        this.nizKupljenihProizvoda = nizKupljenihProizvoda;
+    public RacunZaPlacanje(String datum) {
+        this.nizKupljenihProizvoda = new ArrayList<>();
         this.datum = datum;
-
-
         this.iznos = 0;
         for(Proizvod p : nizKupljenihProizvoda){
             this.iznos = this.iznos + p.getCena();
         }
     }
 
-    public Kupovina(String datum) {
-        this.datum = datum;
-        this.nizKupljenihProizvoda = new ArrayList<Proizvod>();
-        this.iznos = 0;
-    }
 
     public ArrayList<Proizvod> getNizKupljenihProizvoda() {
         return nizKupljenihProizvoda;
@@ -69,21 +62,18 @@ public class Kupovina {
         sb.append(datum);
         sb.append("\n");
 
-        sb.append("Iznos: ");
-        sb.append(iznos);
-        sb.append("\n");
 
         sb.append("Kupjeni proizvodi: \n");
-        // for(int i = 0; i < niz.length; i++){
-        //  Proizvod p = niz[i];
-        //
-        // }
         for(Proizvod p : nizKupljenihProizvoda){
             sb.append(p.getNaziv());
             sb.append(" - ");
             sb.append(p.getCena());
             sb.append("\n");
         }
+
+        sb.append("Ukupan Iznos za placanje: ");
+        sb.append(iznos);
+        sb.append("\n");
 
         return sb.toString();
     }

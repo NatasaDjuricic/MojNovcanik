@@ -46,10 +46,12 @@ public class Racun {
         this.valuta = valuta;
     }
 
-    public double novoStanjenaRacunu(Proizvod p) {
+    public double novoStanjeNaRacunu(Proizvod p) {
         double novoStanje = stanjenaRacunu - p.getCena();
         return novoStanje;
     }
+
+
 
     public String toString () {
 
@@ -57,7 +59,7 @@ public class Racun {
         sb.append("\nRacun broj: ").append(brojRacuna);
         sb.append("\n");
 
-        sb.append("Stanje racunu: ").append(stanjenaRacunu).append(" ").append(valuta);
+        sb.append("Stanje na racunu: ").append(stanjenaRacunu).append(" ").append(valuta);
         sb.append("\n");
 
 

@@ -7,10 +7,10 @@ public class SveTransakcije {
     private String datumTransakcije;
     private ArrayList<Transakcija> nizTransakcija;
 
-    public SveTransakcije(int brojTransakcije, String datumTransakcije, ArrayList<Transakcija> nizTransakcija) {
+    public SveTransakcije(int brojTransakcije, String datumTransakcije) {
         this.brojTransakcije = brojTransakcije;
         this.datumTransakcije = datumTransakcije;
-        this.nizTransakcija = nizTransakcija;
+        this.nizTransakcija = new ArrayList<>();
     }
 
     public int getBrojTransakcije() {
