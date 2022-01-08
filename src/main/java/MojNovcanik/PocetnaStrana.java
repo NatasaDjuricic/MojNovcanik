@@ -97,6 +97,20 @@ public class PocetnaStrana {
 
                     System.out.println("Iznos: " + md.pretvaraUDinare(valutaKojaSeMenja, iznosKojiSeMenja));
 
+                    System.out.print("Da li zelite da prebacite ovaj novac na dinarski racun : ");
+                    String opc = sc.next();
+                    switch(opc) {
+                        case "DA" :
+                            dr1.setStanjenaRacunu(dr1.getStanjenaRacunu()+md.pretvaraUDinare(valutaKojaSeMenja, iznosKojiSeMenja));
+                            System.out.print("Novo stanje na racunu: " + dr1);
+                            break;
+
+                        case "NE":
+                            break;
+
+                        default:
+                            System.out.println("Morate odgovoriti sa Da ili NE");
+                    }
 
 
 
