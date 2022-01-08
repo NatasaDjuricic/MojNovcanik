@@ -32,6 +32,7 @@ public class PocetnaStrana {
         //dodajem racune u niz
         mojiRacuni.dodajRacun(dr1);
         mojiRacuni.dodajRacun(dr2);
+        mojiRacuni.dodajRacun(dr3);
 
         //uklanjam racune iz niza
         mojiRacuni.ukloniRacun(dr2);
@@ -127,19 +128,20 @@ public class PocetnaStrana {
 
                         System.out.println("Za placanje : " + rzp1);
 
-                        System.out.print("Da li zelite da platite ovaj racun: ");
+                      System.out.print("Da li zelite da platite ovaj racun: ");
                         String opc1 = sc.next();
-                        switch (opc1) {
+                       switch (opc1) {
                             case "DA":
 
                                 dr1.setStanjenaRacunu(dr1.getStanjenaRacunu() - rzp1.getIznos());
                                 System.out.print("Novo stanje na racunu: " + dr1);
-                            break; // Ovde mi break ne izlazi na kraj programa, u case 4 izlazi ???
+                             
                             case "NE":
                                 continue;
-                        }
-                    case 3:
 
+                        }
+
+                    case 3:
 
                         System.out.println(st1);
                         break;
