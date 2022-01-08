@@ -1,5 +1,7 @@
 package MojNovcanik;
 
+// nema nista posebno za komentarisanje
+// klasa sadrzi samo ime i prezime, constructor, gettere, settere i toString medodu
 public class Osoba {
     private String ime;
     private String prezime;

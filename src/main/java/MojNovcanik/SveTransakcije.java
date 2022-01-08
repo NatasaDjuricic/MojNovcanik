@@ -1,21 +1,22 @@
 package MojNovcanik;
 
+
+
 import java.util.ArrayList;
 
 public class SveTransakcije {
-    private int brojTransakcije;
-    private String datumTransakcije;
-    private ArrayList<Transakcija> nizTransakcija;
+   private String datumTransakcije;
+   private ArrayList<Transakcija> nizTransakcija;
+   private double iznos;
 
-    public SveTransakcije(int brojTransakcije, String datumTransakcije) {
-        this.brojTransakcije = brojTransakcije;
+    public SveTransakcije(String datumTransakcije) {
         this.datumTransakcije = datumTransakcije;
         this.nizTransakcija = new ArrayList<>();
+        this.iznos=0;
+
     }
 
-    public int getBrojTransakcije() {
-        return brojTransakcije;
-    }
+
 
     public String getDatumTransakcije() {
         return datumTransakcije;
@@ -25,9 +26,6 @@ public class SveTransakcije {
         return nizTransakcija;
     }
 
-    public void setBrojTransakcije(int brojTransakcije) {
-        this.brojTransakcije = brojTransakcije;
-    }
 
     public void setDatumTransakcije(String datumTransakcije) {
         this.datumTransakcije = datumTransakcije;
@@ -37,15 +35,14 @@ public class SveTransakcije {
         this.nizTransakcija = nizTransakcija;
     }
 
+    public void dodajTransakciju(Transakcija t) {
+        nizTransakcija.add(t);
+    }
+
+
+
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Broj transakcije: ");
-        sb.append(brojTransakcije);
-        sb.append("\n");
-
-        sb.append("Datum transakcije: ");
-        sb.append(datumTransakcije);
-        sb.append("\n");
 
         if(nizTransakcija.isEmpty()==true) {
             sb.append("Nemate nikakvih Transakcija: ");
@@ -53,10 +50,17 @@ public class SveTransakcije {
 
         else {
             sb.append("Imate sledece transakcije: ");
-            for(Transakcija t: nizTransakcija) {
-                sb.append(nizTransakcija.toString());
+            for(Transakcija t : nizTransakcija){
+                sb.append("Broj transakcije: ").append(t.getBrojTransakcije());
+                sb.append("\n");
+                sb.append("Datum transakcije: ").append(t.getDatumTransakcije());
+                sb.append("\n");
+                sb.append("Iznos transakcije: ").append(t.getIznosTransakcije());
+                sb.append("\n");
 
             }
+                sb.append(nizTransakcija);
+
         }
         return sb.toString();
     }

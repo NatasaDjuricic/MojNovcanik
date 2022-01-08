@@ -32,7 +32,7 @@ public class MojiRacuni {
         nizDinarskihRacuna.remove(dr);
     }
 
-
+    //Pravim String metodu koja ce ispisati ono sto zelim kada pozovem ovu metodu u main
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (nizDinarskihRacuna.isEmpty() == true) {

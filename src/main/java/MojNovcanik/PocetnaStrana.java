@@ -1,6 +1,5 @@
 package MojNovcanik;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PocetnaStrana {
@@ -10,7 +9,8 @@ public class PocetnaStrana {
         //To zamisljam da bi trebalo da se napravi prvo Sign up
         //pa da upise te podatke u neki excel file (Appache POI)
         //pa pri logovanju da iscita sve usernameove i passworde koji su sacuvani u excelu
-        //i da uporedi sa ukucanim usernameom i passwordom(username sa usernames, password sa passwords
+        //i da uporedi sa ukucanim usernameom i passwordom(username sa usernames, password sa passwords)
+        //ako se oba poklapaju pusta dalje, ako se ne poklapa ili username ili password
         String Username;
         String Password;
         //Posto nemam Sign up stavila sam neki ussername i password za poredjenje
@@ -36,14 +36,14 @@ public class PocetnaStrana {
         //uklanjam racune iz niza
         mojiRacuni.ukloniRacun(dr2);
 
-        //Pravim proizvod koji cu da kupim preko racuna
+        //Pravim proizvod koji cu da stavim na Racun za placanje
         Proizvod p1 = new Proizvod("Mleko", 80, "Hrana");
         Proizvod p2 = new Proizvod("Sok", 100, "Hrana");
         Proizvod p3 = new Proizvod("Hleb", 50, "Hrana");
 
 
         //Pravim Racun za placanje
-        RacunZaPlacanje rzp1 = new RacunZaPlacanje("11.11.2021");
+        RacunZaPlacanje rzp1 = new RacunZaPlacanje("11.11.2021.");
         rzp1.dodajProizvod(p1);
         rzp1.dodajProizvod(p2);
         rzp1.dodajProizvod(p3);
@@ -57,14 +57,21 @@ public class PocetnaStrana {
 
 
 
-        //Pravim Transakcije koja prikazuje podatke o kupovinama placene preko racuna
-       /* Transakcija tr1 = new Transakcija(dr1, k1);
-        Transakcija tr2 = new Transakcija(dr1, k2);
-        Transakcija tr3 = new Transakcija(dr2, k3);*/
+        //Pravim Transakcije koje su izvrsene
+        //svaka transakcija sadrzi broj transakcije, datum transakcije i racun
+        Transakcija tr1 = new Transakcija(1, "11.11.2021.", rzp1);
+        Transakcija tr2 = new Transakcija(2, "12.12.2021.", rzp2);
+        Transakcija tr3 = new Transakcija(3, "01.01.2022.", rzp2);
 
         //Pravim nizTransakcija
-     /*   SveTransakcije st1 = new SveTransakcije(1, "29", )*/
+        SveTransakcije st1 = new SveTransakcije("01.01.2021.");
+        st1.dodajTransakciju(tr1);
+        st1.dodajTransakciju(tr2);
+        st1.dodajTransakciju(tr3);
 
+
+
+        //Logovannje
         Scanner sc = new Scanner(System.in);
         System.out.print("Unesite korisnicko ime : ");
         String username = sc.next();
@@ -84,6 +91,9 @@ public class PocetnaStrana {
              System.out.println("Dobrodosli!");
 
          }
+        //preko booleana i while uslovljavama da se kuca opcija za izlazak iz menija
+        //ili da se bira neka druga opcija
+        // ovo ne bih znala, nego sam nasla na internetu kako da resim
             boolean exit = false;
 
             //Cuvamo promenljivu
@@ -130,10 +140,8 @@ public class PocetnaStrana {
                         }
                     case 3:
 
-                      /*  System.out.println(tr1);*/
 
-                        System.out.println("Stanje na racunu pre transakcije: " + dr1.getStanjenaRacunu());
-                        System.out.println( rzp1.getIznos());
+                        System.out.println(st1);
                         break;
 
 
